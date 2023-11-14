@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exchange rate</title>
+    <style>
+        table {
+            border: 1px solid black;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 5px;
+        }
+        #Exchange {
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <h1>환율 고시표</h1>
+    <table id ="Exchange">
+        <thead style="background-color: lemonchiffon;">
+            <tr>
+                <th rowspan="2">통화</th>
+                <th rowspan="2">매매 기준율</th>
+                <th colspan="2">현찰 매매율</th>
+                <th colspan="2">전신환 매매율</th>
+                <th rowspan="2">T/C 매도율</th>
+            </tr>
+            <tr>
+                <th>매도율</th>
+                <th>매입율</th>
+                <th>매도율</th>
+                <th>매입율</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th style="height: 100px">미국(USD)</th>
+                <th>1,023.00</th>
+                <th>1,040.90</th>
+                <th>1,005.10</th>
+                <th>1,032.80</th>
+                <th>1,013.20</th>
+                <th>1,035.27</th>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
