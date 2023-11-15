@@ -1,0 +1,30 @@
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: silver;
+    border: 1px solid black;
+    border-top: 3px dashed red;
+    border-right: 3px dashed green;
+    border-bottom: 3px dashed yellow;
+    border-left: 3px dashed blue;
+}
+
+.item {
+    margin: 30px auto;
+    width: 200px;
+    height: 200px;
+    background-color: royalblue;
+    /* lefttop rightop rightbotton leftbotton*/
+    /* border-radius: 10px 20px 30px 40px; */
+    /* border-radius: 0 30px; */
+    border-radius: 50%;
+
+    /* x-offset y-offset blur(번짐정도) spread(그림자크기) color */
+    /* - blur 번짐정도 */
+    /* - spread 그림자크기 */
+    box-shadow: 5px 5px 10px 3px gray;
+}
+
+.item:hover {
+    box-shadow: 7px 7px 12px 5px gray;
+}
