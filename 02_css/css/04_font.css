@@ -16,9 +16,11 @@
 #font2 {
     /* font-family: 'Noto Sans KR', sans-serif;
     font-size: 48px;
+    기본값은 16px
     font-weight: 200;
+    300(light) 400(regular) 700(bold)
     font-style: italic;
-    line-height: 48px; 자간 크기 */
+    line-height: 48px; 문장 간 간격 */
     /* 모아쓰기 shorthand */
     /* font: font-style font-variant font-weight font-size/line-height font-family */
     font: italic bold 48px/48px 'Dongle', sans-serif;
@@ -35,7 +37,7 @@ html {
 }
 
 #parent :first-child {
-    font-size: 24px; /* 절대크기*/
+    font-size: 24px; /* 절대크기 */
 }
 #parent :nth-child(2) {
     font-size: 150%; /* 부모요소 상대크기 */
