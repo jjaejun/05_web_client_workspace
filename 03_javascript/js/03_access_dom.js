@@ -88,10 +88,10 @@ function test1() {
     // const name = inputs[4];\
 
     // 세번째 방법
-    // const inputs = document.getElementsByClassName("user-input");
+    // const inputs = document.getElementsByClassName("user-input"); // value로 반환
     // const name = inputs[0];
 
-    const inputs = document.getElementsByName("name");
+    const inputs = document.getElementsByName("name"); // value로 반환
     const name = inputs[0];
 
     console.log(inputs);
