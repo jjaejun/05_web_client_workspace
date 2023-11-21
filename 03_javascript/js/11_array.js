@@ -186,3 +186,124 @@ function test6() { // (mutable)
     // toString
     console.log(alpha.toString()); // a,k,l,m,x,y,c,d,e
 }
+
+/**
+ * forEach(callbackFunction)
+ * - callbackFunction 함수를 함수에 전달하면, 내부적으로 호출해 사용
+ * - 단순반복처리
+ * - 요소별로 callbackFunction 호출
+ */
+function test7() {
+    const arr = ['a', 'b', 'c', 'd', 'e'];
+    arr.forEach(function(ch, index, _arr){
+        console.log(ch, index, _arr);
+    });
+
+    const brr = [1, 2, '가', 3, '홍길동', 'ABC', 500, 'ㅋㅋㅋ'];
+    const nums = [];
+    const strs = [];
+    brr.forEach(function(elem, index){
+        // if(typeof elem === 'number')
+        //     nums.push(elem);
+        // if(typeof elem === 'string')
+        //     strs.push(elem);
+        (typeof elem === 'number') && nums.push(elem);
+        (typeof elem === 'string') && strs.push(elem);
+    });
+
+    console.log(nums);
+    console.log(strs);
+}
+
+/**
+ * filter(cbFunc)
+ * - boolean 반환하는 콜백함수를 전달
+ * - true를 반환한 요소만 새배열에 담아 전달
+ * - immutable
+ */
+function test8() {
+    const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+    const evens = arr.filter(function(n, i, _arr){
+        console.log(n, i, _arr);
+        return n % 2 == 0;
+    });
+
+    console.log(evens);
+}
+
+/**
+ * map(cbFunc)
+ * - 요소별 연산결과를 새배열에 담아 반환
+ * - immutable
+ */
+function test9() {
+    const arr = [1, 2, 3];
+    const arr2 = arr.map(function(n){
+        return n * n;
+    });
+
+    console.log(arr2);
+
+    // 페이지 내의 버튼 속 글자를 배열에 담기
+    // 1. buttons 배열생성 (진짜배열로 변환)
+    // 2. map함수를 이용해서 button태그안의 innerHTML속성값을 배열에 담아 반환
+    const buttons = document.getElementsByTagName("button");
+    const buttonArr = Array.from(buttons);
+    const buttonArr2 = buttonArr.map(function(n){
+        return n.innerHTML;
+    });
+
+    console.log(buttonArr2);
+
+    // 강사님 코드
+    const buttons2 = [...document.querySelectorAll("button")];
+    console.log(buttons2);
+    const contents = buttons2.map(function(button){
+        return button.innerText;
+    });
+    console.log(contents);
+}
+
+/**
+ * reduce(callbackFunction[, initValue])
+ * - 모든 요소를 순회해서 하나의 값을 반환
+ * - 초기값을 지정하지 않으면, 첫번째 요소가 초기값으로 사용됨
+ */
+function test10() {
+    const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    const sum = arr.reduce(function(agg, n, i, _arr){
+        console.log(agg, n, i, _arr);
+        return agg + n;
+    }, 0);
+    console.log(sum);
+
+    // 홀수배열 생성
+    const odds = arr.reduce(function(agg, n){
+        n % 2 == 0 || agg.push(n);
+        return agg;
+    }, []);
+
+    console.log(odds);
+
+    // 페이지 내의 버튼 속 글자를 배열에 담기 - reduce
+    // 1. buttons 배열생성 (진짜배열로 변환)
+    // 2. map함수를 이용해서 button태그안의 innerHTML속성값을 배열에 담아 반환
+    // const buttons = [...document.querySelectorAll("button")];
+    // console.log(buttons);
+    // const buttonArr = buttons.reduce(function(text, value){
+    //     text.push(value.innerText);
+    //     return text;
+    // }, []);
+
+    // console.log(buttonArr);
+
+    // 강사님 코드
+    const texts = Array.from(document.querySelectorAll("button"))
+        .reduce(function(arr, button){
+            arr.push(button.textContent)
+            return arr;
+        }, []);
+
+    console.log(texts);
+}
