@@ -1,0 +1,42 @@
+.prod-list {
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+
+.prod-list li {
+    /*부모요소로 사용될 li태그의 포지션relative*/
+    position: relative; 
+    float: left;
+    padding: 0;
+    margin: 10px;
+    overflow: hidden;
+}
+
+/*이미지의 크기는 300*240으로 통일함 */
+.prod-list img {
+    margin:0;
+    padding:0;
+    float:left;
+    z-index:5;
+    width:300px;
+    height:240px;
+} 
+
+.prod-list .caption{
+    position:absolute;
+    top:220px;
+    width:300px;
+    height:220px;
+    padding-top: 20px;
+    text-align:center;
+    color:white;
+    opacity:0;
+    background:rgba(0,0,0,.5);
+    transition: .5s;
+}
+
+.prod-list li:hover .caption{
+    opacity:1;
+    transform: translateY(-220px);
+}
