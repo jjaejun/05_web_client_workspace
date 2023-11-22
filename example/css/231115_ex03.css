@@ -1,0 +1,15 @@
+/* background-image 배경이미지지정 url(이미지경로)*/
+/* background-color 배경색지정 */
+/* background-repeat : 배경이미지 반복여부 repeat-x | repeat-y | no-repeat */
+/* background-position 배경이미지 위치 30px 50px | 50% 50% | left/right/center top/bottom/center */
+/* background-size 배경이미지 크기지정 100px 200px | contanin | cover */
+/* - contain : x축 또는 y축이 꽉찰때까지만 확대/축소. 요소를 채우지 못할수 있음 */
+/* - cover : 요소를 모두 채울때까지 확대/축소. 이미지가 짤릴수 있음 */
+/* background-attachment 배경이미지 고정여부 scroll(기본값) | fixed */
+#only-bg {
+    width: 100%;
+    height: 800px;
+    border: 1px solid black;
+    /* background: bg-color bg-image position/bg-size bg-repeat bg-origin bg-clip bg-attachment */
+    background: coral url('../sample/image/bgsample.PNG') center center/cover no-repeat fixed;
+}

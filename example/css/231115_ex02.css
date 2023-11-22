@@ -1,0 +1,20 @@
+#img-wrapper{
+    margin : auto;
+    width: 80%;
+    padding:50px;
+    text-align: center;
+    background : lightgray;
+}
+
+img{
+    height:200px;
+    margin:0 0 0 10px;
+}
+
+img:nth-of-type(1){
+    margin:0;
+}
+
+img:hover{
+    box-shadow:5px 5px 15px 5px gray;
+}
