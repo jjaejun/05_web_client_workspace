@@ -130,6 +130,8 @@ Novel.prototype.read = function(name){
  * - 생성자함수객체 - 
  * - 프로토타입
  * - 생성객체 - new연산자 호출결과
+ * 
+ * 화살표함수는 this를 재바인딩 할 수 없다.
  */
 const test5 = () => {
     // A
