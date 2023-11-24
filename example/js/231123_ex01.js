@@ -10,6 +10,7 @@ MDN Web,https://developer.mozilla.org/en-US/
     // console.log(siteList2);
 
     const space = document.querySelector(".btn-wrapper")
+    // space.innerHTML = ``; // 초기화
 
     siteList2.forEach((text) => {
         const siteList3 = text.split(",");
@@ -22,4 +23,6 @@ MDN Web,https://developer.mozilla.org/en-US/
         console.log(button);
         space.innerHTML += button;
     });
+
+    e.target.onclick = null // 핸들러 제거 (초기화와 제거 중 2중1택)
 };
