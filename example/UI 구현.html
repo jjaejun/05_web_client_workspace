@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI구현 | 이재준</title>
+    <style>
+        body {
+            background-color: #deeaf6;
+        }
+        #box {
+            margin: auto;
+            width: 500px;
+            height: 650px;
+            background-color: #eeeeee
+        }
+        label {
+            margin-left: 5%;
+        }
+        input {
+            float: right;
+            border-top: 0;
+            border-right: 0;
+            border-bottom: dashed;
+            border-left: 0;
+            margin-right: 10%;
+        }
+        input#userEmail {
+            width: 14%;
+            margin-right: 0%;
+        }
+        input#userDomain {
+            width: 14%;
+        }
+        button#join {
+            background-color: #c4e0b4;
+            border: 0;
+            padding-left: 40%;
+            padding-right: 40%;
+            padding-top: 3%;
+            padding-bottom: 3%;
+            margin-left: 6%;
+            margin-bottom: 5%;
+        }
+        #warning {
+            float: right;
+            float: top;
+            margin-right: 10%;
+        }
+        span {
+            float: right;
+            margin-right: 10%;
+        }
+        #spanEmail {
+            display: inline-block;
+            margin-left: 0%;
+            margin-right: 0%;
+        }
+        </style>
+</head>
+<body>
+    <form action="">
+        <div id="box">
+            <br>
+            <br>
+            <br>
+            <div>
+                <label for="userId" style="font-size: 25px;"><strong>아이디</strong></label>
+                <input type="text" id="userId" name="userId" style="background-color: #eeeeee;" required>
+                <br>
+                <span id="warningId"></span>
+            </div>
+            <br>
+            <br>
+            <div>
+                <label for="password" style="font-size: 25px;"><strong>패스워드</strong></label>
+                <input type="password" id="password" name="password" style="background-color: #eeeeee;" required>
+                <br>
+                <span id="warningPW"></span>
+            </div>
+            <br>
+            <br>
+            <div>
+                <label for="confirm-password" style="font-size: 25px;"><strong>패스워드 확인</strong></label>
+                <input type="password" id="confirm-password" name="confirm-password" style="background-color: #eeeeee;" size="20px" required>
+                <br>
+                <span id="warningCPW"></span>
+            </div>
+            <br>
+            <br>
+            <div>
+                <label for="userEmail" style="font-size: 25px;"><strong>이메일</strong></label>
+                <input type="text" id="userDomain" name="userDomain" style="background-color: #eeeeee;">
+                <span id="spanEmail" style="font-size: 25px;"><strong>@</strong></span>
+                <label for="userDomain"></label>
+                <input type="text" id="userEmail" name="userEmail" style="background-color: #eeeeee;">
+            </div>
+            <br>
+            <br>
+            <div>
+                <label for="address" style="font-size: 25px;"><strong>주소</strong></label>
+                <input type="text" id="address" name="address" style="background-color: #eeeeee;">
+                <br>
+                <br>
+                <input type="text" id="address" name="address" style="background-color: #eeeeee;">
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <button id="join" style="font-size: 25px;"><strong>가 입</strong></button>
+        </div>
+    </form>
+    
+    <script>
+        document.querySelector('#userId').addEventListener('blur', (e) => {
+            const warning = document.getElementById('warningId');
+            const { target : { value }} = e;
+            warning.innerHTML = '';
+            if(!value)
+            warning.innerHTML = '필수 입력 항목입니다.';
+        else
+                warning.innerHTML = '';
+        })
+        document.querySelector('#password').addEventListener('blur', (e) => {
+            const warning = document.getElementById('warningPW');
+            const { target : { value }} = e;
+            warning.innerHTML = '';
+            if(!value)
+                warning.innerHTML = '필수 입력 항목입니다.';
+            else
+                warning.innerHTML = '';
+        })
+        document.querySelector('#confirm-password').addEventListener('blur', (e) => {
+            const warning = document.getElementById('warningCPW');
+            const { target : { value }} = e;
+            warning.innerHTML = '';
+            if(!value)
+                warning.innerHTML = '필수 입력 항목입니다.';
+            else
+                warning.innerHTML = '';
+        })
+
+        document.querySelector('#password').addEventListener('focus', (e) => {
+            const warning = document.getElementById('warningPW');
+            warning.innerHTML = '';
+            warning.innerHTML = '영문자 대/소문자 특수문자, 숫자 포함 8 ~ 32자';
+        });
+    </script>
+</body>
+</html>
