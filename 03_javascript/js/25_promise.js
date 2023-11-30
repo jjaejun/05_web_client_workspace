@@ -1,9 +1,11 @@
 /**
  * Promise
  * - 비동기작업(producing code) + 콜백(consuming code)를 명쾌히 작성하는 문법
+ * 
  * - Promise 객체는 status/result 상태값을 가진다.
  *  - status : pending -> fulfilled | rejected
  *  - result : undefined -> value | error객체
+ * 
  * - Promise객체는 두개의 callback함수를 가진다.
  *  - resolve : 정상처리된 경우 호출하는 콜백
  *  - reject : 오류가 발생한 경우 호출하는 콜백
@@ -73,7 +75,7 @@ const loadScript = (src) => new Promise((resolve) => {
 
 /**
  * Promise Chain
- * - Promise는 연속적으로 사용가능하다
+ * - Promise는 연속적으로 사용가능하다. 콜백지옥을 then지옥으로 대체
  * - 암묵적으로 프로미스객체 반환(명시적으로 반환한 값이 있다면, 프로미스의 result값으로 사용된다.)
  * - 명시적으로 프로미스 객체를 반환할수도 있다.
  */
