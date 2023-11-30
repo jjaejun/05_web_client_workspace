@@ -2,9 +2,14 @@
  * fetch api
  * - promise기반의 비동기통신 객체
  * - fetch-비동기작업(네트워크상의 요청) - 콜백 - then-콜백
+ * 
  * - json응답에 대한 처리
  *  - json이란? javascript object notation, 프로그램간의 데이터교환언어(약속)
  *  - {"id":"shqkel","company":"KH정보교육원","classroom":"352","cnt":4}
+ *  - 속성명은 반드시 쌍따옴표로 감싼다.
+ *  - 문자열을 반드시 쌍따옴표로 감싼다.
+ *  - 숫자/boolean/null은 그대로 작성
+ *  - 객체/배열 사용가능
  */
 document.querySelector("#btn1").addEventListener("click", () => {
     const url = 'https://asia-northeast3-focal-elf-326215.cloudfunctions.net/user';
@@ -84,3 +89,37 @@ document.querySelector("#btn4").addEventListener("click", () => {
             setTimeout(() => img.remove(), 3000);
         })
 })
+
+/**
+ * API KEY
+ * - 보통 API는 전송량 제한을 위해 key값을 가지고 요청하게 된다.
+ * - http요청 헤더부분에 지정한 헤더명으로 등록해야한다.
+ * - live_RWvH5udkPYnWrR4ZsZbxm7ALK4naayTE1jJmTsNFOw6VHjOLJKLgFQkI6wn25GQ1
+ */
+document.querySelector("#btn5").addEventListener("click", () => {
+    const url = 'https://api.thecatapi.com/v1/images/search';
+
+    //axios(url, options)
+    axios(url, {
+        headers : {
+            'x-api-key' : 'live_RWvH5udkPYnWrR4ZsZbxm7ALK4naayTE1jJmTsNFOw6VHjOLJKLgFQkI6wn25GQ1'
+        },
+        params : {
+            limit : 1 // 기본값
+        }
+    })
+    .then((response) => {
+        console.log(response);
+        // response > data > [{ url }]
+        // const url = response.data[0].url; 아래와 동일
+        const {data : [{url}]} = response;
+        
+        // .cat-wrapper > img
+        const img = document.createElement('img');
+        img.src = url;
+        img.style = 'width: 300px; border-radius: 50%';
+        const wrapper = document.querySelector(".img-wrapper");
+        wrapper.innerHTML = '';
+        wrapper.append(img);
+    })
+});
