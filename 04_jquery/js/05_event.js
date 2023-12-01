@@ -25,11 +25,17 @@ $(".outer")
     });
 
 $(title).hover((e) => {
+    // e.target.classList.add('reverse');
     $(e.target).addClass('reverse');
 }, (e) => {
+    // e.target.classList.remove('reverse);
     $(e.target).removeClass('reverse');
 });
 
+/**
+ * on 핸들러 바인딩
+ * off 핸들러 인바인딩
+ */
 $(counter).on("click", (e) => {
     let n = $(e.target).html();
     $(e.target).html(--n);
