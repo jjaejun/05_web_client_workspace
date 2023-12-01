@@ -23,7 +23,7 @@ $("#btn1").on("click", () => {
     // [...document.querySelectorAll('.group1')].forEach((p) => p.style.textDecoration = 'underline');
 
     // 강사님 코드
-    // document.querySelectorAll(".group1")/forEach((p) => {
+    // document.querySelectorAll(".group1").forEach((p) => {
     //     group1.style.textDecoration = 'underline';
     // });
 
